@@ -22,7 +22,7 @@ public class TestBase {
 		try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream(
-					"C:\\Users\\shweta.suresh.hadpad\\eclipse-workspace\\SeleniumAutomation\\src\\main\\java\\com\\qa\\config\\config.properties");
+					"/Users/shweta.suresh.hadpad/eclipse-workspace/SeleniumAutomation/src/main/java/com/qa/config/config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -36,7 +36,7 @@ public class TestBase {
 
 		if (browserName.equals("edge")) {
 			System.setProperty("webdriver.edge.driver",
-					"C:\\Users\\shweta.suresh.hadpad\\Downloads\\edgedriver_win64\\msedgedriver.exe");
+					"/Users/shweta.suresh.hadpad/eclipse-workspace/SeleniumAutomation/webdriver/msedgedriver.exe");
 			driver = new EdgeDriver();
 		} else if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
