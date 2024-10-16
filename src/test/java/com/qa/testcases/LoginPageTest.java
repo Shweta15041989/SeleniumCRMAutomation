@@ -1,5 +1,7 @@
 package com.qa.testcases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -14,9 +16,9 @@ public class LoginPageTest extends TestBase{
 	LoginPage login;
 	HomePage homePage;
 	
-//	public LoginPageTest() {
-//		super();
-//	}
+	public LoginPageTest() {
+		super();
+	}
 	@BeforeMethod
 	public void setUp() {
 		initialization();
@@ -30,7 +32,7 @@ public class LoginPageTest extends TestBase{
 		}
 	
 	@Test(priority=2)
-	public void loginTest() throws InterruptedException {
+	public void loginTest() throws InterruptedException, IOException {
 		login.enterLogindetails(prop.getProperty("email"), prop.getProperty("password"));
 		
 	}

@@ -1,11 +1,18 @@
 package com.qa.pages;
 
-import org.jspecify.annotations.Nullable;
+//import org.jspecify.annotations.Nullable;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import java.io.File;
+import java.io.IOException;
 
+import com.google.common.io.Files;
 import com.qa.base.TestBase;
 
 public class LoginPage  extends TestBase{
@@ -38,7 +45,7 @@ public class LoginPage  extends TestBase{
 		return driver.getTitle();
 	}
 	
-	public String enterLogindetails(String mail, String pass) throws InterruptedException {
+	public String enterLogindetails(String mail, String pass) throws InterruptedException, IOException {
 		startHere.click();
 		Thread.sleep(3000);
 		username.sendKeys(mail);
@@ -48,7 +55,12 @@ public class LoginPage  extends TestBase{
 		String homeTitle = driver.getTitle();
 		Assert.assertEquals(homeTitle, "Cogmento CRM");
 		System.out.println("Successfully Logged in");
-		return homeTitle;
+		System.out.println("Title of the page is " + homeTitle);
+		// File f = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		// Files.copy(f, new File(  "C://Desktop//img.png"));
+		// JavascriptExecutor js = (JavascriptExecutor)driver;
+		// js.executeScript("window.scrollBy(0,1000)");
+					return homeTitle;
 		//return new HomePage();
 	}
 }
