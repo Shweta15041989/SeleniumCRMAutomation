@@ -21,8 +21,8 @@ public class TestBase {
 	public TestBase() {
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream(
-					"/Volumes/Data/Shweta_Project/SeleniumCRMAutomation/src/main/java/com/qa/config/config.properties");
+			FileInputStream ip = new FileInputStream("/src/main/java/com/qa/config/config.properties");
+								 //"/Volumes/Data/Shweta_Project/SeleniumCRMAutomation/src/main/java/com/qa/config/config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
